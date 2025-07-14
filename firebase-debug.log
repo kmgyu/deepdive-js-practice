@@ -1,0 +1,141 @@
+[debug] [2025-07-14T02:16:22.235Z] ----------------------------------------------------------------------
+[debug] [2025-07-14T02:16:22.240Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-07-14T02:16:22.241Z] CLI Version:   14.10.1
+[debug] [2025-07-14T02:16:22.241Z] Platform:      win32
+[debug] [2025-07-14T02:16:22.241Z] Node Version:  v22.17.0
+[debug] [2025-07-14T02:16:22.241Z] Time:          Mon Jul 14 2025 11:16:22 GMT+0900 (대한민국 표준시)
+[debug] [2025-07-14T02:16:22.242Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-14T02:16:22.251Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-14T02:16:22.251Z] > authorizing via signed-in user (lidersy961@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\goorm workspace\week2_tailwindcss
+
+[debug] [2025-07-14T02:16:45.838Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Program Files\nodejs\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:518:28)
+    at Interface.emit (node:domain:489:12)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1132:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:271:20)
+    at ReadStream.emit (node:events:530:35)
+    at ReadStream.emit (node:domain:489:12)
+    at emitKeys (node:internal/readline/utils:370:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-14T07:39:01.114Z] ----------------------------------------------------------------------
+[debug] [2025-07-14T07:39:01.118Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-07-14T07:39:01.119Z] CLI Version:   14.10.1
+[debug] [2025-07-14T07:39:01.119Z] Platform:      win32
+[debug] [2025-07-14T07:39:01.119Z] Node Version:  v22.17.0
+[debug] [2025-07-14T07:39:01.120Z] Time:          Mon Jul 14 2025 16:39:01 GMT+0900 (대한민국 표준시)
+[debug] [2025-07-14T07:39:01.121Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-14T07:39:01.130Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-14T07:39:01.131Z] > authorizing via signed-in user (lidersy961@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\goorm workspace\week2_tailwindcss
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2025-07-14T07:41:07.586Z] Checked if tokens are valid: false, expires at: 1752462941834
+[debug] [2025-07-14T07:41:07.586Z] Checked if tokens are valid: false, expires at: 1752462941834
+[debug] [2025-07-14T07:41:07.587Z] > refreshing access token with scopes: []
+[debug] [2025-07-14T07:41:07.590Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-07-14T07:41:07.590Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-14T07:41:08.081Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-07-14T07:41:08.081Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-14T07:41:08.101Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2025-07-14T07:41:08.102Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"goorm-deepdive"}
+[debug] [2025-07-14T07:41:08.807Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
+[debug] [2025-07-14T07:41:08.808Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_AVAILABLE","suggestedProjectId":"goorm-deepdive"}
+[debug] [2025-07-14T07:41:42.097Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:42.097Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:42.098Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-07-14T07:41:42.098Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"goorm-deepdive","name":"goorm-deepdive"}
+[debug] [2025-07-14T07:41:42.521Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2025-07-14T07:41:42.522Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.5253746161063234350"}
+[debug] [2025-07-14T07:41:42.524Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:42.524Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:42.525Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5253746161063234350 [none]
+[debug] [2025-07-14T07:41:43.326Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5253746161063234350 200
+[debug] [2025-07-14T07:41:43.326Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5253746161063234350 {"name":"operations/create_project.global.5253746161063234350"}
+[debug] [2025-07-14T07:41:43.834Z] [Project Creation Poller] Retrying task index 0
+[debug] [2025-07-14T07:41:43.834Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:43.834Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:43.835Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5253746161063234350 [none]
+[debug] [2025-07-14T07:41:44.053Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5253746161063234350 200
+[debug] [2025-07-14T07:41:44.054Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5253746161063234350 {"name":"operations/create_project.global.5253746161063234350","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"298390434335","projectId":"goorm-deepdive","lifecycleState":"ACTIVE","name":"goorm-deepdive","createTime":"2025-07-14T07:41:43.282812Z"}}
+[debug] [2025-07-14T07:41:44.056Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:44.056Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:44.056Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/goorm-deepdive:addFirebase [none]
+[debug] [2025-07-14T07:41:47.914Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/goorm-deepdive:addFirebase 200
+[debug] [2025-07-14T07:41:47.914Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/goorm-deepdive:addFirebase {"name":"operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj"}
+[debug] [2025-07-14T07:41:47.915Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:47.915Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:47.915Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj [none]
+[debug] [2025-07-14T07:41:51.718Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj 200
+[debug] [2025-07-14T07:41:51.718Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj {"name":"operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj"}
+[debug] [2025-07-14T07:41:52.225Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2025-07-14T07:41:52.225Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:52.225Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:52.226Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj [none]
+[debug] [2025-07-14T07:41:53.342Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj 200
+[debug] [2025-07-14T07:41:53.342Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj {"name":"operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj"}
+[debug] [2025-07-14T07:41:54.344Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2025-07-14T07:41:54.344Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:54.345Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:54.345Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj [none]
+[debug] [2025-07-14T07:41:55.155Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj 200
+[debug] [2025-07-14T07:41:55.155Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj {"name":"operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj"}
+[debug] [2025-07-14T07:41:57.155Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2025-07-14T07:41:57.156Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:57.156Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:57.156Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj [none]
+[debug] [2025-07-14T07:41:58.292Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj 200
+[debug] [2025-07-14T07:41:58.293Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj {"name":"operations/workflows/MjE4ZTFlMWEtZGU4Zi00NzVkLTk0MzktYjE5ODlhYjNjZTlj","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.FirebaseProject","projectId":"goorm-deepdive","projectNumber":"298390434335","displayName":"goorm-deepdive","name":"projects/goorm-deepdive","resources":{"hostingSite":"goorm-deepdive"}}}
+[info] 
+[info] === Your Firebase project is ready! ===
+[info] 
+[info] Project information:
+[info]    - Project ID: goorm-deepdive
+[info]    - Project Name: goorm-deepdive
+[info] 
+[info] Firebase console is available at
+[info] https://console.firebase.google.com/project/goorm-deepdive/overview
+[info] i  Using project goorm-deepdive (goorm-deepdive) 
+[info] 
+=== Hosting Setup
+[debug] [2025-07-14T07:41:58.317Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:58.317Z] Checked if tokens are valid: true, expires at: 1752482467081
+[debug] [2025-07-14T07:41:58.317Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/goorm-deepdive [none]
+[debug] [2025-07-14T07:41:59.307Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/goorm-deepdive 200
+[debug] [2025-07-14T07:41:59.307Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/goorm-deepdive {"projectId":"goorm-deepdive","projectNumber":"298390434335","displayName":"goorm-deepdive","name":"projects/goorm-deepdive","resources":{"hostingSite":"goorm-deepdive"},"state":"ACTIVE","etag":"1_6b46760f-c0bd-4d04-a74d-1d94cf9078bc"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
