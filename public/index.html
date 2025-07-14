@@ -1,89 +1,242 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.10.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.10.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kmgyu's page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+        extend: {
+            fontFamily: {
+            sans: ['"Noto Sans KR"', 'sans-serif'],
+            heading: ['"Anton"', 'sans-serif'],
+            },
+            colors: {
+                primary: '#1E3A8A',   // 딥 블루
+                secondary: '#F59E0B', // 앰버
+                accent: '#10B981',    // 그린
+                muted: '#E5E7EB',     // 그레이
+            },
+        }
+        }
+    }
+    </script>
+    <style>
+      /* 기본 선택자 */
+      strong {
+        font-weight: 500;
       }
     </style>
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <div class="dark:text-white">
+    <header>
+      <nav class="flex items-center justify-between p-4 bg-gray-800 text-white">
+        <img src="https://picsum.photos/100/50" alt="로고" />
+        <ul class="flex gap-4">
+          <li><a href="index.html" class="bg-indigo-500 text-white px-4 py-2 rounded hover:text-blue-400">Home</a></li>
+          <li>
+            <a href="portfolio.html" class="bg-indigo-500 text-white px-4 py-2 rounded hover:text-blue-400">Portfolio</a>
+          </li>
+          <li><a href="#tools" class="bg-indigo-500 text-white px-4 py-2 rounded hover:text-blue-400">skills</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="bg-white dark:bg-gray-600">
+    <section
+      id="hero"
+      class="bg-cover bg-center text-white p-12"
+      style="background-image: url('https://picsum.photos/1200/400')"
+    >
+      <h1 class="text-4xl font-bold">Welcome!</h1>
+      <p class="mt-4 text-lg">저의 페이지에 방문해주셔서 감사합니다.</p>
+    </section>
+
+    <section id="info" class="bg-blue-100 dark:bg-blue-900 m-2 flex flex-col items-center p-8">
+      <div class="bg-gray-400 rounded-full items-center flex">
+        <img
+          src="https://picsum.photos/150"
+          alt="내 이미지"
+          class="rounded-full m-4"
+        />
+        <div class="text-left max-w-xl m-4">
+          <p class="dark:text-white">
+          웹 개발자 Kmgyu 입니다.<br>
+          사용자 경험과 퍼포먼스를 중요하게 생각합니다.<br>
+          백엔드를 주로 개발합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="audiovideo" class="flex flex-col items-center p-8">
+        <iframe 
+          class="w-full max-w-xl mx-auto rounded-lg shadow-md" 
+          height="315"
+          src="https://www.youtube.com/embed/JYDvFQp3ToQ?si=FnY44eISP6tD2BMd"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+        <img 
+          class="rounded-md shadow-lg w-full max-w-md"
+          src="https://i.namu.wiki/i/JAfD0ghRT010K5nuteoeNlVMtrUV8DMHupWMYKmyaeHmIbNjGZ7DUkG9uhtHeJTAsOysWFPggiIJvPPvLXJdMDY97bev2Ksdpx7-JwsoT2juijUESvxrPmMbszWG1QC8FAKL0o8imIbhb3vrYkmEfg.svg" 
+          alt="나무위키 이미지"
+        >
+        <audio src="https://ccrma.stanford.edu/~jos/mp3/harpsi-cs.mp3" class="m-8" controls></audio>
+    </section>
+
+    <section id="form" class="flex flex-col items-center p-8">
+      <form>
+        <input>
+        <button class="rounded-full bg-black p-3">press me</button>
+      </form>
+    </section>
+
+    <section id="favorite-food" class="flex flex-col items-center p-8">
+      <div>
+      <ol class="list-decimal">좋아하는 음식은요...
+        <li>고기</li>
+        <li>고기</li>
+        <li>고기</li>
+      </ol>
+      </div>
+    </section>
+
+    <section
+      id="skills"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-8 bg-slate-200 dark:bg-slate-600"
+    >
+      <div class="p-4 border rounded shadow text-center hover:bg-white dark:hover:bg-slate-400">
+        <iconify-icon
+          icon="mdi:language-html5"
+          width="40"
+          height="40"
+          class="mx-auto mb-2 text-orange-500"
+        ></iconify-icon>
+        <div class="dark:text-white">
+          <h3 class="font-semibold text-lg">HTML</h3>
+          <p>웹 문서 구조 설계</p>
+        </div>
+      </div>
+      <div class="p-4 border rounded shadow text-center hover:bg-white dark:hover:bg-slate-400">
+        <iconify-icon
+          icon="mdi:language-css3"
+          width="40"
+          height="40"
+          class="mx-auto mb-2 text-blue-500"
+        ></iconify-icon>
+        <h3 class="font-semibold text-lg">CSS</h3>
+        <p>디자인</p>
+      </div>
+      <div class="p-4 border rounded shadow text-center hover:bg-white dark:hover:bg-slate-400">
+        <iconify-icon
+          icon="mdi:language-javascript"
+          width="40"
+          height="40"
+          class="mx-auto mb-2 text-yellow-400"
+        ></iconify-icon>
+        <h3 class="font-semibold text-lg">JavaScript</h3>
+        <p>인터랙티브 기능 구현</p>
+      </div>
+      <div class="p-4 border rounded shadow text-center hover:bg-white dark:hover:bg-slate-400">
+        <iconify-icon
+          icon="mdi:react"
+          width="40"
+          height="40"
+          class="mx-auto mb-2 text-cyan-400"
+        ></iconify-icon>
+        <h3 class="font-semibold text-lg">React</h3>
+        <p>컴포넌트 기반 UI</p>
+      </div>
+      <div class="p-4 border rounded shadow text-center hover:bg-white dark:hover:bg-slate-400">
+        <iconify-icon
+          icon="simple-icons:spring"
+          width="40"
+          height="40"
+          class="mx-auto mb-2 text-green-600"
+        ></iconify-icon>
+        <h3 class="font-semibold text-lg">Spring Framework</h3>
+        <p>서버 로직 개발</p>
+      </div>
+      <div class="p-4 border rounded shadow text-center hover:bg-white dark:hover:bg-slate-400">
+        <iconify-icon
+          icon="simple-icons:django"
+          width="40"
+          height="40"
+          class="mx-auto mb-2 text-blue-600"
+        ></iconify-icon>
+        <h3 class="font-semibold text-lg">Django</h3>
+        <p>서버 로직 개발</p>
+      </div>
+      <div class="p-4 border rounded shadow text-center hover:bg-white dark:hover:bg-slate-400">
+        <iconify-icon
+          icon="simple-icons:mysql"
+          width="40"
+          height="40"
+          class="mx-auto mb-2 text-blue-800"
+        ></iconify-icon>
+        <h3 class="font-semibold text-lg">MySQL</h3>
+        <p>데이터베이스 설계 및 쿼리</p>
+      </div>
+    </section>
+
+    <section id="tools" class="p-8">
+      <h2 class="text-center text-xl font-bold mb-4 bg-primary text-white rounded-full">사용 툴</h2>
+      <table class="table-auto w-full border border-gray-300">
+        <thead>
+          <tr class="bg-gray-100 dark:bg-slate-400">
+            <th class="border px-4 py-2 text-left">툴 이름</th>
+            <th class="border px-4 py-2 text-left">설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2">VSCode</td>
+            <td class="border px-4 py-2">
+              마이크로소프트의 코드 에디터, Python/JS 코드 작성 시 이용
+            </td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">IntelliJ</td>
+            <td class="border px-4 py-2">
+              JetBrains의 IDE, Java 코드 작성 시 이용
+            </td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Git & GitHub</td>
+            <td class="border px-4 py-2">버전관리 및 코드 저장소</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Docker</td>
+            <td class="border px-4 py-2">버전관리 및 이미지 저장소</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Figma</td>
+            <td class="border px-4 py-2">디자인 및 UI/UX 협업 도구</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Miro</td>
+            <td class="border px-4 py-2">디자인 및 설계 협업 도구</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Notion</td>
+            <td class="border px-4 py-2">문서 및 협업 도구</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+    <footer class="bg-gray-900 text-white text-center p-4">
+      <p>lidersy961@gmail.com</p>
+      <small>© 2025 포트폴리오</small>
+    </footer>
+    </div>
   </body>
 </html>
