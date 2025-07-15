@@ -8,7 +8,8 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <script>
     tailwind.config = {
-        theme: {
+      darkMode: 'class', 
+      theme: {
         extend: {
             fontFamily: {
             sans: ['"Noto Sans KR"', 'sans-serif'],
@@ -21,7 +22,7 @@
                 muted: '#E5E7EB',     // 그레이
             },
         }
-        }
+      }
     }
     </script>
     <style>
@@ -30,6 +31,22 @@
         font-weight: 500;
       }
     </style>
+    <script src="./utils.js" defer></script>
+    <script>
+        // mouse over, mouse out event용.
+        // 이미지는 복구되지 않음. (똑같은 URL에 계속 요청, 랜덤 이미지)
+function changeImage(img) {
+  // const url = new URL(img.src);
+  // url.searchParams.set('grayscale');
+  img.src = 'https://picsum.photos/150?grayscale';
+}
+
+function restoreImage(img) {
+  // const url = new URL(img.src);
+  // url.searchParams.delete('grayscale');
+  img.src = 'https://picsum.photos/150';
+}
+    </script>
   </head>
   <body>
     <div class="dark:text-white">
@@ -42,6 +59,7 @@
             <a href="portfolio.html" class="bg-indigo-500 text-white px-4 py-2 rounded hover:text-blue-400">Portfolio</a>
           </li>
           <li><a href="#tools" class="bg-indigo-500 text-white px-4 py-2 rounded hover:text-blue-400">skills</a></li>
+          <li><button id="toggle-theme">🌗</button></li>
         </ul>
       </nav>
     </header>
@@ -59,9 +77,11 @@
     <section id="info" class="bg-blue-100 dark:bg-blue-900 m-2 flex flex-col items-center p-8">
       <div class="bg-gray-400 rounded-full items-center flex">
         <img
-          src="https://picsum.photos/150"
+          src="https://picsum.photos/150" 
           alt="내 이미지"
           class="rounded-full m-4"
+          onmouseover="changeImage(this)"
+          onmouseout="restoreImage(this)"
         />
         <div class="text-left max-w-xl m-4">
           <p class="dark:text-white">
@@ -232,6 +252,49 @@
         </tbody>
       </table>
     </section>
+
+<section id="test">
+  <p>인라인 JS를 이용한 섹션</p>
+  <div class="flex flex-col m-8 ">
+    <p id="login-change">로그인 테스트입니다.</p>
+    <input class="bg-white dark:bg-black mb-2" name="login-name" type="text" placeholder="이름 입력" class="border p-1 mb-2">
+    <button id="login-btn" class="bg-blue-500 text-white px-4 py-1 rounded m-4">Login</button>
+  </div>
+
+<div class="flex flex-col items-center gap-6">
+  <!-- 구구단 계산 -->
+  <div class="p-4 bg-gray-500 rounded">
+    <h3>간단한 수학을 해봅니다.</h3>
+    <p>구구단을 입력하세요.</p>
+    <div class="flex gap-3 items-center">
+      <input name="product-a" class="bg-white dark:bg-black mb-2" oninput="document.getElementById('result1').textContent = this.value * document.querySelector('input[name=product-b]').value">
+      <input name="product-b" class="bg-white dark:bg-black mb-2" oninput="document.getElementById('result1').textContent = document.querySelector('input[name=product-a]').value * this.value">
+      <p id="result1">결과가 나옵니다.</p>
+    </div>
+  </div>
+
+  <!-- 1부터 입력한 수까지 더하기 -->
+  <div class="p-4 bg-gray-500 rounded">
+    <h3>for문을 이용해 1부터 입력한 숫자까지 더해봅시다.</h3>
+    <p>숫자를 입력하세요.</p>
+    <div class="flex gap-3 items-center">
+      <input name="sum-a" class="bg-white dark:bg-black mb-2" oninput="
+        (function(n) {
+          let sum = 0;
+          for(let i = 1; i <= n; i++) sum += i;
+          document.getElementById('result2').textContent = sum;
+        })(parseInt(this.value) || 0)
+      ">
+      <p id="result2">결과가 나옵니다.</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+
     </div>
     <footer class="bg-gray-900 text-white text-center p-4">
       <p>lidersy961@gmail.com</p>

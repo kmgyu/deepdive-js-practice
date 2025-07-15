@@ -29,29 +29,53 @@
         font-weight: 500;
       }
     </style>
+
+    <script src="./utils.js" defer></script>
+
   </head>
   <body>
+    <div class="dark:text-white">
     <header>
       <nav class="flex items-center justify-between p-4 bg-gray-800 text-white">
-        <img src="https://via.placeholder.com/100x50" alt="로고" />
+        <img src="https://picsum.photos/100/50" alt="로고" />
         <ul class="flex gap-4">
-          <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+          <li><a href="index.html" class="bg-indigo-500 text-white px-4 py-2 rounded hover:text-blue-400">Home</a></li>
           <li>
-            <a href="portfolio.html" class="hover:text-blue-400">Portfolio</a>
+            <a href="portfolio.html" class="bg-indigo-500 text-white px-4 py-2 rounded hover:text-blue-400">Portfolio</a>
           </li>
-          <li><a href="index.html#tools" class="hover:text-blue-400">skills</a></li>
+          <li><a href="#tools" class="bg-indigo-500 text-white px-4 py-2 rounded hover:text-blue-400">skills</a></li>
+          <li><button id="toggle-theme">🌗</button></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="projects">
+      <div class="bg-white dark:bg-slate-900">
+        <section id="projects" class="m-8">
         <h2>참여 프로젝트</h2>
+
         <article>
-          <h3>목포대학교 학부 페이지 리팩토링 프로젝트</h3>
-          <p>
-            백엔드 팀장 <br>
-            Thymeleaf, Spring / AWS EC2, S3 / Docker, DockerCompose, DockerHub<br>
+          <h3 class="cursor-pointer text-blue-600 underline" data-modal="modal1">목포대학교 학부 페이지 리팩토링 프로젝트</h3>
+        </article>
+
+        <article>
+          <h3 class="cursor-pointer text-blue-600 underline" data-modal="modal2">목포 시립 도서관 스팸 메일 테스트 서버</h3>
+        </article>
+
+        <article>
+          <h3 class="cursor-pointer text-blue-600 underline" data-modal="modal3">목포대학교 대동제 모바일 주문 시스템</h3>
+        </article>
+      </section>
+
+      <!-- 모달1 -->
+      <div id="modal1" class="modal fixed inset-0 z-50 bg-black/50 backdrop-blur flex items-center justify-center hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg max-w-xl w-full relative">
+          <button class="absolute top-2 right-2 text-gray-500" data-close>&times;</button>
+          <h3 class="text-xl font-bold mb-2">목포대학교 학부 페이지 리팩토링 프로젝트</h3>
+          <div class="bg-white rounded dark:bg-gray-700">
+            <p class="text-sm m-4">
+            포지션 : 백엔드 팀장<br>
+            Thymeleaf, Spring / AWS EC2, S3 / Docker, DockerCompose, DockerHub / Notion<br>
             Spring Security 및 JWT를 이용한 로그인 보안<br>
             Github Actions 및 Docker Hub를 이용한 CI/CD 파이프라인 구축 <br>
             AWS EC2 및 AWS S3를 이용한 서버 구축<br>
@@ -59,27 +83,80 @@
             Swagger를 이용한 API 문서화<br>
             Thymeleaf를 이용한 테스트용 웹페이지 제작<br>
             팀원 별 브랜치 및 Develop 브랜치를 이용한 관리 전략 이용
-          </p>
-        </article>
-        <article>
-          <h3>목포 시립 도서관 스팸 메일 테스트 서버</h3>
-          <p>
-            팀장<br>
-            
-            도커 이미지를 이용한 배포<br>
-            
-          </p>
-        </article>
-        <article>
-          <h3>목포대학교 대동제 모바일 주문 시스템</h3>
-          <p>설명 및 역할</p>
-        </article>
-      </section>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 모달2 -->
+      <div id="modal2" class="modal fixed inset-0 z-50 bg-black/50 backdrop-blur flex items-center justify-center hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg max-w-xl w-full relative">
+          <button class="absolute top-2 right-2 text-gray-500" data-close>&times;</button>
+          <h3 class="text-xl font-bold mb-2">목포 시립 도서관 스팸 메일 테스트 서버</h3>
+          <div class="bg-white rounded dark:bg-gray-700">
+            <p class="text-sm m-4">
+            포지션 : 백엔드 개발<br>
+            Jinja, Flask, Sqlite / Nginx / Docker / Ubuntu 20<br>
+            JWT 및 WTF을 이용한 인증 관리<br>
+            구글 계정 및 SMTP를 이용한 스팸메일 전송 api 개발<br>
+            도커 이미지를 이용한 배포
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 모달3 -->
+      <div id="modal3" class="modal fixed inset-0 z-50 bg-black/50 backdrop-blur flex items-center justify-center hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg max-w-xl w-full relative">
+          <button class="absolute top-2 right-2 text-gray-500" data-close>&times;</button>
+          <h3 class="text-xl font-bold mb-2">목포대학교 대동제 모바일 주문 시스템</h3>
+          <div class="bg-white rounded dark:bg-gray-700">
+            <p class="text-sm m-4">
+            포지션 : 팀장, 프론트엔드<br>
+            Vue.js, tailwind@3 / Mermaid / Figma / Notion / AWS EC2<br>
+            산출물 관리 및 프로젝트 설계<br>
+            스토리보드 작성 <br>
+            Figma를 이용한 UI 디자인<br>
+            훅, 컴포넌트 및 페이지 구현<br>
+            SSE를 이용한 비동기 처리 api 구현<br>
+            리포지토리 폴더 트리 구조 설계 및 컨벤션 문서 작성<br>
+            Git Flow 전략을 활용한 브랜치 관리 및 병합 관리
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      </div>
     </main>
+      
+    
 
     <footer class="bg-gray-900 text-white text-center p-4">
       <p>lidersy961@gmail.com</p>
       <small>© 2025 나의 포트폴리오</small>
     </footer>
-  </body>
+  </div></body>
+      <script defer>
+    // 열기
+    document.querySelectorAll('[data-modal]').forEach(el => {
+      el.addEventListener('click', () => {
+        const modalId = el.getAttribute('data-modal');
+        document.getElementById(modalId)?.classList.remove('hidden');
+      });
+    });
+
+    // 닫기
+    document.querySelectorAll('[data-close]').forEach(el => {
+      el.addEventListener('click', () => {
+        el.closest('.modal')?.classList.add('hidden');
+      });
+    });
+
+    // 배경 클릭시 닫기
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', e => {
+        if (e.target === modal) modal.classList.add('hidden');
+      });
+    });
+  </script>
 </html>
