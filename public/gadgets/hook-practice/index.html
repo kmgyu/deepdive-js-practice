@@ -1,0 +1,205 @@
+<!DOCTYPE html >
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Hooks 시뮬레이션 (순수 JS)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        darkMode: 'class'
+    };
+    </script>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <header class="bg-white shadow p-4 dark:bg-gray-800 dark:text-gray-100">
+      <div class="container mx-auto text-center">
+        <h1 class="text-2xl font-bold dark:text-white">
+          React Hooks 개념 시뮬레이션
+        </h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          HTML + TailwindCSS (순수 JS 적용)
+        </p>
+        <button
+          onclick="toggleTheme()"
+          class="mt-2 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 text-sm px-4 py-1 rounded"
+        >
+          테마 토글
+        </button>
+        
+    <script>
+      function toggleTheme() {
+        const root = document.documentElement;
+        const isDark = root.classList.contains("dark");
+        if (isDark) {
+          root.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        } else {
+          root.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      }
+      function setInitialTheme() {
+        const root = document.documentElement;
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          root.classList.add("dark");
+        } else {
+          root.classList.remove("dark");
+        }
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        setInitialTheme();
+      });
+    </script>
+      </div>
+    </header>
+
+    <main class="container mx-auto py-8 space-y-12">
+      <!-- ✅ useState 예제 -->
+      <section
+        class="bg-white p-6 rounded shadow dark:bg-gray-800 dark:border dark:border-gray-700 dark:shadow-lg"
+      >
+        <h2 class="text-xl font-semibold mb-2 dark:text-white">
+          🟢 useState 개념: 상태 저장 및 변경
+        </h2>
+        <p class="text-gray-600 mb-4 dark:text-gray-300">
+          버튼을 누를 때마다 카운트가 올라가는 기능을 통해
+          <strong class="dark:text-white">상태(state)</strong>를 관리하는 개념을
+          체험합니다.
+        </p>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+          id="stateBtn"
+        >
+          클릭 수: <span id="counter">0</span>
+        </button>
+        <script>
+          let count = 0;
+          document.getElementById("stateBtn").addEventListener("click", () => {
+            count++;
+            document.getElementById("counter").innerText = count;
+          });
+        </script>
+      </section>
+
+      <!-- ✅ useEffect 예제 -->
+      <section
+        class="bg-white p-6 rounded shadow dark:bg-gray-800 dark:border dark:border-gray-700 dark:shadow-lg"
+      >
+        <h2 class="text-xl font-semibold mb-2 dark:text-white">
+          🔵 useEffect 개념: 부수 효과 처리
+        </h2>
+        <p class="text-gray-600 mb-4 dark:text-gray-300">
+          타이머를 통해 컴포넌트가
+          <strong class="dark:text-white">렌더링된 이후 동작</strong>을 실행하는
+          구조를 체험합니다.
+        </p>
+        <div>
+          <p class="text-lg dark:text-gray-200">
+            ⏱️ 현재 시간: <span id="clock">--:--:--</span>
+          </p>
+        </div>
+      </section>
+      <script>
+        function getClock() {
+          let today = new Date();
+          let current = today.toLocaleTimeString();
+          document.getElementById("clock").innerText = `${current}`;
+        }
+        getClock();
+        setInterval(getClock, 1000);
+      </script>
+
+      <!-- ✅ useRef 예제 -->
+      <section
+        class="bg-white p-6 rounded shadow dark:bg-gray-800 dark:border dark:border-gray-700 dark:shadow-lg"
+      >
+        <h2 class="text-xl font-semibold mb-2 dark:text-white">
+          🟡 useRef 개념: DOM 직접 접근
+        </h2>
+        <p class="text-gray-600 mb-4 dark:text-gray-300">
+          특정 DOM 요소(input)에 직접 접근해서 포커스를 이동하는 기능을
+          구현합니다.
+        </p>
+        <div class="flex gap-2">
+          <input
+            id="refInput"
+            type="text"
+            placeholder="여기에 포커스됩니다"
+            class="border rounded px-3 py-2 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:border-gray-500"
+          />
+          <button
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
+            id="focusBtn"
+          >
+            포커스 이동
+          </button>
+        </div>
+        <script>
+          document.getElementById("focusBtn").addEventListener("click", () => {
+            document.getElementById("refInput").focus();
+          });
+        </script>
+      </section>
+
+      <!-- ✅ useReducer 예제 -->
+      <section
+        class="bg-white p-6 rounded shadow dark:bg-gray-800 dark:border dark:border-gray-700 dark:shadow-lg"
+      >
+        <h2 class="text-xl font-semibold mb-2 dark:text-white">
+          🟣 useReducer 개념: 복잡한 상태 전환
+        </h2>
+        <p class="text-gray-600 mb-4 dark:text-gray-300">
+          간단한 할 일 목록을 추가하며
+          <strong class="dark:text-white">dispatch 방식 상태관리</strong>를
+          경험합니다.
+        </p>
+        <div class="flex gap-2 mb-4">
+          <input
+            id="todoInput"
+            type="text"
+            placeholder="할 일 입력"
+            class="border px-3 py-2 rounded w-full dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:border-gray-500"
+          />
+          <button
+            id="addTodoBtn"
+            class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
+          >
+            추가
+          </button>
+        </div>
+        <ul
+          id="todoList"
+          class="list-disc pl-5 text-gray-700 dark:text-gray-200"
+        ></ul>
+        <script>
+          let addTodoBtn = document.getElementById("addTodoBtn");
+          let list = document.getElementById("todoList");
+          addTodoBtn.addEventListener("click", () => {
+            let li = document.createElement("li");
+            let text = document.getElementById("todoInput").value.trim();
+            if (text != "") {
+              list.appendChild(li);
+              li.innerText = text;
+              document.getElementById("todoInput").value = "";
+            }
+          });
+        </script>
+      </section>
+    </main>
+
+    <footer
+      class="bg-white shadow p-4 mt-12 dark:bg-gray-800 dark:text-gray-300"
+    >
+      <div class="container mx-auto text-center text-sm">
+        © 2025 React Hook 예제 모음 (HTML + TailwindCSS)
+      </div>
+    </footer>
+
+  </body>
+</html>

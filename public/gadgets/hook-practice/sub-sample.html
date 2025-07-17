@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>useMemo & useCallback 시뮬레이션</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- ✅ 헤더 -->
+    <header class="bg-white shadow p-4">
+      <div class="container mx-auto text-center">
+        <h1 class="text-2xl font-bold">React Hooks 시뮬레이션 - useMemo & useCallback</h1>
+        <p class="text-sm text-gray-500">복잡한 연산 캐싱 & 함수 재사용</p>
+      </div>
+    </header>
+
+    <main class="container mx-auto py-8 space-y-12">
+      <!-- ✅ useMemo 예제 -->
+      <section class="bg-white p-6 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">🔶 useMemo 개념: 계산 결과 캐싱</h2>
+        <p class="text-gray-600 mb-4">
+          입력 값이 바뀔 때만 복잡한 연산을 실행하고, 그렇지 않으면 캐싱된 값을 재사용합니다.
+        </p>
+        <input id="memoInput" type="number" placeholder="숫자 입력" class="border px-3 py-2 rounded" />
+        <p class="mt-4">결과: <span id="memoResult">-</span></p>
+        <script>
+        // 이전 입력값과 결과를 저장할 변수 선언
+        let lastInput = null;
+        let lastResult = null;
+
+        // 복잡한 계산을 수행하는 함수 (입력값에 따라 시간이 오래 걸리는 연산)
+        function expensiveCalculation(n) {
+          console.log('복잡한 계산 실행됨');
+          let result = 0;
+          // 1천만 번 루프를 돌며 복잡한 계산 수행
+          for (let i = 0; i < 1e7; i++) {
+            result += Math.sqrt(n + i % 100); // 제곱근 계산
+          }
+          return Math.floor(result); // 소수점 버림
+        }
+
+        // input 요소에서 값이 변경될 때마다 실행
+        document.getElementById("memoInput").addEventListener("input", (e) => {
+          const value = Number(e.target.value); // 입력값을 숫자로 변환
+
+          // 이전에 계산한 값과 동일한 입력이면 캐시된 결과 사용
+          if (value === lastInput) {
+            console.log('캐시된 결과 사용');
+            document.getElementById("memoResult").innerText = lastResult;
+            return; // 새로운 계산을 수행하지 않고 종료
+          }
+
+          // 새로운 값이면 복잡한 계산 수행
+          const result = expensiveCalculation(value);
+
+          // 계산 결과를 저장해 다음 입력과 비교할 수 있도록 함
+          lastInput = value;
+          lastResult = result;
+
+          // 계산 결과를 화면에 표시
+          document.getElementById("memoResult").innerText = result;
+        });
+
+        </script>
+      </section>
+
+      <!-- ✅ useCallback 예제 -->
+      <section class="bg-white p-6 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">🟤 useCallback 개념: 함수 재사용</h2>
+        <p class="text-gray-600 mb-4">
+          버튼 클릭 시 동일한 함수를 사용하여 렌더링 성능을 향상시키는 예시를 흉내냅니다.
+        </p>
+        <button id="cbBtn" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded">
+          클릭</button>
+        <p class="mt-2 text-sm text-gray-500">(콘솔에서 함수 생성 여부 확인)</p>
+        <script>
+          // 생성된 클릭 핸들러를 저장할 변수 (캐시 역할)
+          let cachedHandler = null;
+
+          // 클릭 핸들러 함수를 생성하는 팩토리 함수
+          function createHandler() {
+            // 화살표 함수로 정의된 클릭 이벤트 핸들러 반환
+            const handler = () => console.log("버튼 클릭!");
+            return handler;
+          }
+
+          // "cbBtn" ID를 가진 버튼에 클릭 이벤트 리스너 등록
+          document.getElementById("cbBtn").addEventListener("click", () => {
+            // 핸들러가 아직 캐시되지 않았다면
+            if (!cachedHandler) {
+              // 핸들러를 생성하고 캐시에 저장
+              cachedHandler = createHandler();
+              console.log("🔄 새 핸들러 생성됨");
+            }
+
+            // 캐시된 핸들러 실행
+            cachedHandler();
+          });
+
+        </script>
+      </section>
+    </main>
+
+    <!-- ✅ 푸터 -->
+    <footer class="bg-white shadow p-4 mt-12">
+      <div class="container mx-auto text-center text-sm text-gray-500">
+        © 2025 React useMemo & useCallback 예제 (순수 JS 기반)
+      </div>
+    </footer>
+  </body>
+</html>
