@@ -4,7 +4,7 @@ function LevelNode({ node, onClick }) {
   return (
     <div
       className={`graph-node type-${node.type.toLowerCase()}`}
-      style={{ left: node.x, top: node.y }}
+      // style={{ left: node.x, top: node.y }}
       onClick={onClick}
     >
       {node.label}

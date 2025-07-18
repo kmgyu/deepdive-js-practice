@@ -1,12 +1,15 @@
 .graph-container {
   position: relative;
   width: 100%;
-  height: 600px;
-  background: #1a1a1a;
+  height: 100vh;
+  background-color: #1e1e1e;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .graph-node {
-  position: absolute;
+  /* position: absolute; */
   width: 120px;
   height: 40px;
   background: #333;
@@ -27,7 +30,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .sidebar-panel {
@@ -39,4 +43,61 @@
   background: #eee;
   padding: 1rem;
   z-index: 20;
+}
+
+/* 그래프 내 연결선 */
+.graph-lines line {
+  stroke: #aaa;
+  stroke-width: 2;
+  transition: stroke 0.3s ease;
+}
+
+/* 강조된 선 (예: 호버 또는 선택 시) */
+.graph-lines line.active {
+  stroke: #4fc3f7;
+  stroke-width: 3;
+}
+
+/* 방향 강조용 애니메이션 (선택적) */
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.graph-lines line.animated {
+  stroke: #f5a623;
+  stroke-dasharray: 8;
+  stroke-dashoffset: 80;
+  animation: draw-line 1s forwards;
+}
+
+* 수평 레벨 배치 */
+.graph-levels {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* 각 레벨은 열(column)처럼 보이도록 구성 */
+.graph-level {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 20px;
+}
+
+
+/* 노드 박스 정렬 */
+.node-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-height: 60px;
+  max-height: 100px;
 }
