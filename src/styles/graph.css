@@ -1,0 +1,42 @@
+.graph-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: #1a1a1a;
+}
+
+.graph-node {
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  background: #333;
+  color: white;
+  border: 2px solid #999;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.type-combat { background-color: #444 }
+.type-encounter { background-color: #556 }
+.type-emergency { background-color: #844 }
+
+.graph-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sidebar-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: #eee;
+  padding: 1rem;
+  z-index: 20;
+}
