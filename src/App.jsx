@@ -1,14 +1,9 @@
-// src/App.jsx
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import AppRouter from './routes/AppRouter';
+import Game from './components/Game';
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <AppRouter />
-    </BrowserRouter>
+    <div className="app-container min-h-screen flex items-center justify-center bg-gray-900 text-white">
+      <Game />
+    </div>
   );
 }
-
-export default App;
