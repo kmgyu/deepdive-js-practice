@@ -6,13 +6,13 @@ import Footer from '@/components/Footer';
 export default function App() {
   return (
     <>
-    <Header />
     {/* <div className="app-container min-h-screen flex items-center justify-center bg-gray-900 text-white"> */}
     <BrowserRouter>
+    <Header />
       <AppRouter />
+    <Footer />
     </BrowserRouter>
     {/* </div> */}
-    <Footer />
     </>
   );
 }
