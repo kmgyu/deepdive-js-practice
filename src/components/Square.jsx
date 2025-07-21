@@ -1,8 +1,12 @@
-export default function Square({ value, onSquareClick }) {
+export default function Square({ value, onClick }) {
+  const baseStyle = "w-16 h-16 text-2xl font-bold border border-gray-300";
+  const valueStyle = value === 'X' ? 'text-blue-600' : value === 'O' ? 'text-pink-500' : 'text-gray-400';
+
   return (
     <button
-        className="square w-20 h-20 border border-gray-500 text-2xl font-bold flex items-center justify-center hover:bg-gray-700 transition-colors duration-200"
-        onClick={onSquareClick}>
+      className={`${baseStyle} ${valueStyle} hover:bg-gray-100 transition`}
+      onClick={onClick}
+    >
       {value}
     </button>
   );
