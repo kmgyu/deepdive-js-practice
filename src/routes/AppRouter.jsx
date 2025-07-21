@@ -9,7 +9,7 @@ function AppRouter() {
     <Routes>
       <Route path="/" element={<Dashboard />} />
       <Route path="/examples" element={<Examples />} />
-      <Route path="/TicTacToe" element={<TicTacToe />} />
+      <Route path="/tictactoe" element={<TicTacToe />} />
       {/* 여기에 다른 페이지 라우트 추가 가능 */}
     </Routes>
   );
