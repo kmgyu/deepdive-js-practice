@@ -1,6 +1,20 @@
+import { News } from '@/components/EffectExample';
+import { Counter } from '@/components/StateExample';
+import { FocusInput, CountTracker } from '@/components/RefExample';
+import { TodoList } from '@/components/ReducerExample';
+
 export default function HookExamples() {
     return (
-    <p>
-        ppppop
-    </p>);
+    <>
+    <News/>
+
+    <Counter />
+
+    <FocusInput/>
+
+    <CountTracker/>
+
+    <TodoList />
+    </>
+    );
 }
