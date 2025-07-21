@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Dashboard from './Dashboard';
-import Examples from './Examples';
-import TicTacToe from './TicTacToe';
+import Dashboard from '@/pages/Dashboard';
+import Examples from '@/pages/Examples';
+import TicTacToe from '@/pages/TicTacToe';
 
 function AppRouter() {
   return (

@@ -1,5 +1,5 @@
 import { useReducer, useMemo, useCallback } from 'react';
-import Square from './Square';
+import Square from '@components/tic-tac-toe/Square';
 
 const initialState = {
   squares: Array(9).fill(null),

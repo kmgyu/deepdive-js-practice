@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
-import  Board  from './Board';
-import calculateWinner from '../../utils/calculateWinner.js';
+import  Board  from '@components/tic-tac-toe/Board';
+import calculateWinner from '@/utils/calculateWinner.js';
 // import useLocalStorage from './useLocalStorage';
 
 const initialState = {
