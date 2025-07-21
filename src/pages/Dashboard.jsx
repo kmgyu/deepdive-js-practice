@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function DashboardPage() {
+function Dashboard() {
+  console.log('대시보드 렌더링됨');
   const navigate = useNavigate();
 
   return (
@@ -14,7 +15,7 @@ function DashboardPage() {
         </p>
 
         <button
-          onClick={() => navigate('/tictactoe')}
+          onClick={() => navigate('/hook-examples')}
           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
         >
           훅 샘플 보기
@@ -31,4 +32,4 @@ function DashboardPage() {
   );
 }
 
-export default DashboardPage;
+export default Dashboard;

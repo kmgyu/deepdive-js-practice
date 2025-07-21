@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import  Board  from '@components/tic-tac-toe/Board';
+import  Board  from '@/components/tic-tac-toe/Board';
 import calculateWinner from '@/utils/calculateWinner.js';
 // import useLocalStorage from './useLocalStorage';
 
